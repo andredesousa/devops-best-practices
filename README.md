@@ -1,4 +1,4 @@
-# Continuous Automation Best Practices
+# Automation Best Practices
 
 ## Table of Contents
 
