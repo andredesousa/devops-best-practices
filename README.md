@@ -1,57 +1,61 @@
 # Automation Best Practices
 
+This is a guideline of best practices that we can apply to our software projects.
+Every day we hear about continuous testing, continuous integration, continuous delivery, continuous monitoring, continuous automation, etc.
+These tips are based on books, articles and professional experience.
+
 ## Table of Contents
 
-1. Identify tests that can be automated
-2. Run the tests in parallel
-3. Avoid false negatives and false positives
-4. Check the test reports
-5. Run the fastest tests early
-6. Run the tests locally
-7. Do code commits frequently
-8. Commit to the baseline every day
-9. Have a central repository
-10. Minimize the number of branches
-11. Focus on documentation
-12. Do incremental changes
-13. Involving relevant stakeholders
-14. Choose the right automation tools
-15. Publish the results of the latest build
-16. Automate the build and deployment
-17. Decouple releases from deployments
-18. Make the pipeline the only way to deploy
-19. Deploy the same way to all environments
-20. Deploy into a production-like environment
-21. Staging close to the production environment
-22. Build only once and promote the result
-23. Release early, release often
-24. Emergency deployments and rollbacks
-25. Rollback with version control
-26. One-click migration
-27. Keep the pipelines fast
-28. Use Pipeline as Code
-29. Do all work within a stage
-30. Parallelize whenever possible
-31. Wrap the inputs in a timeout
-32. Avoid complex scripts in code pipeline
-33. Monitor the CI/CD pipelines
-34. Smoke-Test the deployments
-35. Instant propagation
-36. Stop the pipeline when it fails
-37. Use Infrastructure as Code
-38. Test the infrastructure code
-39. Version control for all
-40. Do peer-review
-41. Always have backups
-42. Use GitOps
-43. Take a “security first approach”
-44. Run scripts from a limited account
-45. Use horizontal privilege escalation
-46. Follow Principles of Chaos Engineering
-47. Practice redundancy
-48. Do application monitoring
-49. Review metrics on a regular basis
-50. Have an alert system
+1. [Identify tests that can be automated](#identify-tests-that-can-be-automated)
+2. [Run the tests in parallel](#run-the-tests-in-parallel)
+3. [Avoid false negatives and false positives](#avoid-false-negatives-and-false-positives)
+4. [Check the test reports](#check-the-test-reports)
+5. [Run the fastest tests early](#run-the-fastest-tests-early)
+6. [Run the tests locally](#run-the-tests-locally)
+7. [Do code commits frequently](#do-code-commits-frequently)
+8. [Commit to the baseline every day](#commit-to-the-baseline-every-day)
+9. [Have a central repository](#have-a-central-repository)
+10. [Minimize the number of branches](#minimize-the-number-of-branches)
+11. [Focus on documentation](#focus-on-documentation)
+12. [Do incremental changes](#do-incremental-changes)
+13. [Involving relevant stakeholders](#involving-relevant-stakeholders)
+14. [Choose the right automation tools](#choose-the-right-automation-tools)
+15. [Publish the results of the latest build](#publish-the-results-of-the-latest-build)
+16. [Automate the build and deployment](#automate-the-build-and-deployment)
+17. [Decouple releases from deployments](#decouple-releases-from-deployments)
+18. [Make the pipeline the only way to deploy](#make-the-pipeline-the-only-way-to-deploy)
+19. [Deploy the same way to all environments](#deploy-the-same-way-to-all-environments)
+20. [Deploy into a production-like environment](#deploy-into-a-production-like-environment)
+21. [Staging close to the production environment](#staging-close-to-the-production-environment)
+22. [Build only once and promote the result](#build-only-once-and-promote-the-result)
+23. [Release early, release often](#release-early-release-often)
+24. [Emergency deployments and rollbacks](#emergency-deployments-and-rollbacks)
+25. [Rollback with version control](#rollback-with-version-control)
+26. [One-click migration](#one-click-migration)
+27. [Keep the pipelines fast](#keep-the-pipelines-fast)
+28. [Use Pipeline as Code](#use-pipeline-as-code)
+29. [Do all work within a stage](#do-all-work-within-a-stage)
+30. [Parallelize whenever possible](#parallelize-whenever-possible)
+31. [Wrap the inputs in a timeout](#wrap-the-inputs-in-a-timeout)
+32. [Avoid complex scripts in code pipeline](#avoid-complex-scripts-in-code-pipeline)
+33. [Monitor the CI/CD pipelines](#monitor-the-cicd-pipelines)
+34. [Smoke-Test the deployments](#smoke-test-the-deployments)
+35. [Instant propagation](#instant-propagation)
+36. [Stop the pipeline when it fails](#stop-the-pipeline-when-it-fails)
+37. [Use Infrastructure as Code](#use-infrastructure-as-code)
+38. [Test the infrastructure code](#test-the-infrastructure-code)
+39. [Version control for all](#version-control-for-all)
+40. [Do peer-review](#do-peer-review)
+41. [Always have backups](#always-have-backups)
+42. [Use GitOps](#use-gitops)
+43. [Take a security first approach](#take-a-security-first-approach)
+44. [Run scripts from a limited account](#run-scripts-from-a-limited-account)
+45. [Use horizontal privilege escalation](#use-horizontal-privilege-escalation)
+46. [Follow Principles of Chaos Engineering](#follow-principles-of-chaos-engineering)
+47. [Practice redundancy](#practice-redundancy)
+48. [Do application monitoring](#do-application-monitoring)
+49. [Review metrics on a regular basis](#review-metrics-on-a-regular-basis)
+50. [Have an alert system](#have-an-alert-system)
 
 ## Identify tests that can be automated
 
@@ -70,11 +74,11 @@ Hence, the infrastructure on which the tests are executed matter a lot.
 
 ## Avoid false negatives and false positives
 
-Sometimes, a system works fine fundamentally. However, automation scripts don’t reflect the same.
+Sometimes, a system works fine fundamentally. However, automation scripts don't reflect the same.
 They state otherwise and cause a false positive scenario.
 Thus, it creates a situation of confusion and wastes time, effort, and resources.
 Another scenario is that when the automation script gives the green signal and there is something wrong.
-The system isn’t working as it should, but the script declares otherwise.
+The system isn't working as it should, but the script declares otherwise.
 Network issues can cause discrepancies in the test environment settings.
 Leaving a system in a compromised state can cause catastrophic consequences in the long term.
 
@@ -85,7 +89,7 @@ If not carried out properly, the analysis can leave faults unattended and cause 
 Some tests succeed and some fail in automated testing.
 Therefore, it is mandatory to examine test reports for faults and analyse the reason behind the failure of certain tests.
 It is better to conduct the analysis manually to uncover genuine failures.
-It is vital to unmask hidden problems and make sure that they don’t get overlooked due to masking by other issues.
+It is vital to unmask hidden problems and make sure that they don't get overlooked due to masking by other issues.
 
 ## Run the fastest tests early
 
@@ -93,7 +97,7 @@ While keeping the entire pipeline fast is a great general goal, parts of the tes
 Discovering failures as early as possible is important to minimize the resources devoted to problematic builds.
 To achieve this, prioritize and run the fastest tests first.
 Save complex, long-running tests until after we have validated the build with smaller, quick-running tests.
-Test prioritization usually means running the project’s unit tests first since those tend to be quick, isolated, and component focused.
+Test prioritization usually means running the project's unit tests first since those tend to be quick, isolated, and component focused.
 Afterwards, integration tests typically represent the next level of complexity and speed, and finally e2e tests, which often require some level of interaction.
 
 ## Run the tests locally
@@ -108,7 +112,7 @@ The same command used by developers on their local machines should be used by th
 Developers begin the development based on the requirements mentioned in the specifications.
 Once the implementation is complete, the developer performs a unit test on the code and fixes the issues encountered during this round of testing.
 Once the local testing is complete, the developer will push the code to a code repository.
-In most of the development environments, the code is normally pushed to a “feature branch” and once that is approved and tested, it can be pushed to the “master branch”.
+In most of the development environments, the code is normally pushed to a "feature branch" and once that is approved and tested, it can be pushed to the "master branch".
 Hence, developers should be encouraged and motivated to push the code changes more frequently so that it is easy to keep track of changes.
 
 ## Commit to the baseline every day
@@ -190,7 +194,7 @@ Using techniques such as [feature toggles](https://martinfowler.com/articles/fea
 
 ## Make the pipeline the only way to deploy
 
-Promoting code through our CI/CD pipelines requires each change to demonstrate that it adheres to our organization’s codified standards and procedures.
+Promoting code through our CI/CD pipelines requires each change to demonstrate that it adheres to our organization's codified standards and procedures.
 Failures in a CI/CD pipeline are immediately visible and halt the advancement of the affected release to later stages of the cycle.
 Frequently, teams start using their pipelines for deployment, but begin making exceptions when problems occur and there is pressure to resolve them quickly.
 It is important to understand that the CI/CD system is a good tool to ensure that our changes are not introducing other bugs or further breaking the system.
@@ -209,7 +213,7 @@ It just means that if we have a load balancer in production because we need to b
 
 Create a production-like or staging environment, identical to production, to validate changes before pushing them to production.
 This will eliminate mismatches and last-minute surprises.
-When we deploy something into staging, and it works, we can be reasonably assured that that version won’t fail in production and cause an outage.
+When we deploy something into staging, and it works, we can be reasonably assured that that version won't fail in production and cause an outage.
 This environment is the final check of confidence.
 Here it is important to have almost the same amount of data as we would in production.
 This enables us to do load testing and test the scalability of the application in production.
@@ -294,7 +298,7 @@ In some scenarios, heavy consumption of resources on the machine, for example, C
 CI/CD servers have a mechanism for timing out any given step of the pipeline.
 As a best practice, we should always plan for timeouts around the inputs for healthy clean-up of the pipeline.
 An example is when the pipeline waits for manual approval.
-Wrapping the inputs in a timeout will allow them to be cleaned-up if approvals don’t occur within a given time window.
+Wrapping the inputs in a timeout will allow them to be cleaned-up if approvals don't occur within a given time window.
 Otherwise, the pipeline will run infinitely until the server times out.
 
 ## Avoid complex scripts in code pipeline
@@ -355,7 +359,7 @@ Everything from source code and configuration to infrastructure and the database
 Most of these techniques are better known as X as code, such as Pipeline as Code, Infrastructure as Code, and so forth.
 Every change a developer makes must be documented in the source control repository or it is not included in the CI/CD process.
 If a developer copies an artifact generated locally to a test environment, the next deployment will override this out-of-process change.
-That’s why the primary golden rule for effective Continuous Deployment is to version-control everything.
+That's why the primary golden rule for effective Continuous Deployment is to version-control everything.
 What works well for code also will preserve the integrity of configuration, scripts, databases, website html and even documentation.
 
 ## Do peer-review
@@ -374,11 +378,11 @@ A regular data backup, preferably daily or weekly, saves the important files fro
 It focuses on a developer-centric experience when operating infrastructure, by using tools developers are already familiar with, including Git and Continuous Deployment tools.
 GitOps works by using Git as a source of truth for declarative infrastructure and applications.
 
-## Take a “security first approach”
+## Take a security first approach
 
 From an operational security standpoint, the CI/CD system represents some of the most critical infrastructure to protect.
 We should consider isolating the CI/CD systems, placing them in secure internal networks.
-VPNs, strong two-factor authentication and identity and access management systems will help us enforce “the principle of least privilege” and restrict exposure to threats.
+VPNs, strong two-factor authentication and identity and access management systems will help us enforce "the principle of least privilege" and restrict exposure to threats.
 [SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux) is a security kernel module that is available on all Linux distributions.
 It allows us to limit users and process powers in a very granular way.
 
@@ -397,8 +401,8 @@ If we must change a file that is owned by another user, we should escalate to th
 ## Follow Principles of Chaos Engineering
 
 [Chaos Engineering](https://principlesofchaos.org/) is the idea that modern distributed software systems are prone to experiencing random, turbulent conditions and, therefore, such systems should be designed to withstand unexpected problems and weaknesses in production environments.
-Before taking on chaos engineering, it’s important to get the people, processes and technology to a somewhat stable state.
-We should have a proactive system for incident detection and response, and we shouldn’t be spending all of the time reacting to incidents in production.
+Before taking on chaos engineering, it's important to get the people, processes and technology to a somewhat stable state.
+We should have a proactive system for incident detection and response, and we shouldn't be spending all of the time reacting to incidents in production.
 
 ## Practice redundancy
 
@@ -417,7 +421,7 @@ To do that, only log actionable events that machines, or humans can use.
 ## Review metrics on a regular basis
 
 The thresholds we establish might be too high or too low.
-If we’re receiving too many alerts or we aren’t notified when a legitimate issue occurs, it’s time to review the threshold settings.
+If we're receiving too many alerts or we aren't notified when a legitimate issue occurs, it's time to review the threshold settings.
 There are countless metrics that we can choose to monitor, and it can be overwhelming to separate the signal from the noise coming in.
 The [RED Method](https://grafana.com/blog/2018/08/02/the-red-method-how-to-instrument-your-services/) provides a general framework for monitoring the health of a request-based service via three metrics: Rate, Errors and Duration.
 
