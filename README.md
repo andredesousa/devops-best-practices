@@ -432,3 +432,23 @@ By quickly identifying unintended changes to the system, we can minimize service
 Alerts consists in alert rules and notification channel.
 We should always aim to achieve the fastest and most efficient resolution for each type of alert we set up.
 This is tied in with prioritization and should consider escalation.
+
+## Bibliography
+
+- [5 Common Reasons for Automation Tests Failure](https://www.browserstack.com/guide/reasons-for-automation-failure)
+- [7 Best Practices for Continuous Delivery Success](https://devops.com/7-best-practices-continuous-delivery-success/)
+- [8 Best Practices for Successful Implementation of DevOps in Your Enterprise](https://dev.to/credencys/8-best-practices-for-successful-implementation-of-devops-in-your-enterprise-2k93)
+- [16 CI/CD Best Practices To Speed Up Test Automation](https://www.lambdatest.com/blog/16-best-practices-of-ci-cd-pipeline-to-speed-test-automation/)
+- [22 Reasons Why Test Automation Fails For Your Web Application](https://dzone.com/articles/22-reasons-why-test-automation-fails-for-your-web)
+- [An Introduction to CI/CD Best Practices](https://www.digitalocean.com/community/tutorials/an-introduction-to-ci-cd-best-practices)
+- [An Introduction to Metrics, Monitoring, and Alerting](https://www.digitalocean.com/community/tutorials/an-introduction-to-metrics-monitoring-and-alerting)
+- [Best Practices for Continuous Delivery](https://dzone.com/articles/best-practices-for-continuous-delivery)
+- [Continuous Delivery Pipeline](https://www.scaledagileframework.com/continuous-delivery-pipeline/)
+- [Continuous Testing Using Shift Left Testing Approach](https://www.lambdatest.com/blog/continuous-testing-using-shift-left-testing-approach/)
+- [Continuous Integration Tools](https://www.atlassian.com/continuous-delivery/continuous-integration/tools)
+- [Continuous Delivery Pipeline 101](https://www.atlassian.com/continuous-delivery/pipeline)
+- [CI vs CD vs CD — What Are The Key Differences?](https://medium.com/swlh/ci-vs-cd-vs-cd-e102c6dd88eb)
+- [CI/CD concepts](https://docs.gitlab.com/ee/ci/introduction/)
+- [DevOps Best Practices](https://airbrake.io/blog/devops/devops-best-practices)
+- [What is Continuous Testing?](https://www.tricentis.com/products/what-is-continuous-testing/)
+- [What is Continuous Monitoring?](https://www.whizlabs.com/blog/continuous-monitoring/)
