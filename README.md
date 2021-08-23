@@ -1,7 +1,7 @@
-# Automation Best Practices
+# DevOps Best Practices
 
 This is a guideline of best practices that we can apply to our software projects.
-Every day we hear about continuous testing, continuous integration, continuous delivery, continuous monitoring, continuous automation, etc.
+DevOps best practices include agile project management, shifting left with CI/CD, automation, monitoring, observability, and continuous feedback.
 These tips are based on books, articles and professional experience.
 
 ## Table of Contents
