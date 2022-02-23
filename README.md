@@ -1,7 +1,7 @@
 # DevOps Best Practices
 
 This is a guideline of best practices that we can apply to our software projects.
-DevOps best practices include agile project management, shifting left with CI/CD, automation, monitoring, observability, and continuous feedback.
+DevOps best practices include subjects such as agile project management, shifting left with CI/CD, automation, monitoring, observability, continuous feedback, and others.
 These tips are based on books, articles and professional experience.
 
 ## Table of Contents
